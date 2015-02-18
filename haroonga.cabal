@@ -40,4 +40,4 @@ library
 
 source-repository head
   type: git
-  location: git://github.com/cosmo0920/haroonga.git
+  location: git://github.com/haroonga/haroonga.git
