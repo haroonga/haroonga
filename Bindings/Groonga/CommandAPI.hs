@@ -5,6 +5,8 @@ module Bindings.Groonga.CommandAPI
   , grn_database_create
   , grn_execute_command
   , grn_get_errbuf
+  , grn_get_errfile
+  , grn_get_errfunc
   , grn_get_version
   , module Bindings.Groonga.Types ) where
 import Bindings.Groonga
