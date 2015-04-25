@@ -62,6 +62,18 @@ grn_get_errbuf ctx = do
   errbuf <- peekCString char
   return errbuf
 
+grn_get_errfile :: Ptr C'_grn_ctx -> IO String
+grn_get_errfile ctx = do
+  let char = p'_grn_ctx'errfile ctx
+  errbuf <- peekCString char
+  return errbuf
+
+grn_get_errfunc :: Ptr C'_grn_ctx -> IO String
+grn_get_errfunc ctx = do
+  let char = p'_grn_ctx'errfunc ctx
+  errbuf <- peekCString char
+  return errbuf
+
 grn_get_version :: IO String
 grn_get_version = do
   cversion <- c'grn_get_version

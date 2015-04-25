@@ -288,8 +288,8 @@ import Foreign.Ptr
 #field user_data , <grn_user_data>
 #field prev , Ptr <_grn_ctx>
 #field next , Ptr <_grn_ctx>
-#field errfile , CString
-#field errfunc , CString
+#field errfile , CChar
+#field errfunc , CChar
 #field impl , Ptr <_grn_ctx_impl>
 #array_field trace , Ptr ()
 #array_field errbuf , CChar
