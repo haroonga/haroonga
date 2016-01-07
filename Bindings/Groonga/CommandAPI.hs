@@ -41,6 +41,13 @@ grn_database_create ctx dbpath = do
   db <- c'grn_db_create ctx dbname nullPtr
   return db
 
+grn_ctx_connect :: Ptr C'_grn_ctx -> String -> Int -> IO C'grn_rc
+grn_ctx_connect ctx host port = do
+  chost <- newCAString host
+  let flag = 0
+  rc <- c'grn_ctx_connect ctx chost (fromIntegral port) flag
+  return rc
+
 grn_execute_command :: Ptr C'_grn_ctx -> Command -> IO String
 grn_execute_command ctx command = runResourceT $ do
   let command_len = length command
